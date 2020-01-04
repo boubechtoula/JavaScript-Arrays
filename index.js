@@ -2,7 +2,14 @@
 
  console.log(sumWithReduce(numArray));
  console.log(sumWithFor(numArray)); 
+ console.log(flattenArray(numArray));
  
+  function flattenArray (arr){
+    return arr.reduce((result,item)=>{
+      return result.concat(Array.isArray(item)? flattenArray(item): item); 
+    },[])
+  }
+
   function sumWithReduce (tab){
   return tab.reduce((totale, item )=> {
      return totale + (Array.isArray(item) ? sumWithReduce(item) : item ); 
