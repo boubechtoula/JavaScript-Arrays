@@ -1,9 +1,20 @@
  let numArray = [1, 2, [3, 10, [11, 12]], [1, 2, [3, 4]], 5, 6];
-
+const doc = [
+  { name: "charmander", type: "fire" },
+  { name: "squirtle", type: "water" },
+  { name: "bulbasaur", type: "grass" }
+]
  console.log(sumWithReduce(numArray));
  console.log(sumWithFor(numArray)); 
  console.log(flattenArray(numArray));
- 
+  console.log(getMapFromDoc(doc));
+ function getMapFromDoc ( d){
+   return d.reduce((rec, item )=>{
+     rec[item.name] =  {type : item.type}; 
+        return rec; 
+   },{});
+ }
+
   function flattenArray (arr){
     return arr.reduce((result,item)=>{
       return result.concat(Array.isArray(item)? flattenArray(item): item); 
