@@ -9,7 +9,6 @@ console.log(obj.count);
 
 console.log(obj.result);
 
-
 JSON.parse('{"p": 5}', (key, value) =>
   typeof value === 'number'
     ? value * 2 // return value * 2 for numbers
