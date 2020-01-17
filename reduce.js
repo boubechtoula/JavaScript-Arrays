@@ -7,7 +7,8 @@ const doc = [
  console.log(sumWithReduce(numArray));
  console.log(sumWithFor(numArray)); 
  console.log(flattenArray(numArray));
-  console.log(getMapFromDoc(doc));
+ console.log(getMapFromDoc(doc));
+ 
  function getMapFromDoc ( d){
    return d.reduce((rec, item )=>{
      rec[item.name] =  {type : item.type}; 
