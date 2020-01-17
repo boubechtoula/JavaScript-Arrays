@@ -1,38 +1,23 @@
 
-console.log("dfdfd");
-console.log(inverseString("654"));
-function inverseString (str) {
 
-  if(  str!=null && str.length>0){
-    let array = str.split(""); 
-    let reverseArray = array.reverse();  
-    let toTeturn = reverseArray.join(""); 
-    return toTeturn;
-  }
-  return null;
-}
 
-class B {
-  constructor (m, n ){
-    this.m = m;
-    this.n = n;
-  }
-}
-class A extends B {
-    constructor (m,n){
-      super(m,n); 
-    } 
-     
-    add (){ 
-    } 
-}
-let a = {
-  add : function () {
+const json = '{"result":true, "count":42}';
+const obj = JSON.parse(json);
 
-  },
-  f : 0
-}
+console.log(obj.count);
+// expected output: 42
 
-a.ss = function () {
-  console.log("sdsds");
-}
+console.log(obj.result);
+
+
+JSON.parse('{"p": 5}', (key, value) =>
+  typeof value === 'number'
+    ? value * 2 // return value * 2 for numbers
+    : value     // return everything else unchanged
+);
+// { p: 10 }
+
+JSON.parse('{"1": 1, "2": 2, "3": {"4": 4, "5": {"6": 6}}}', (key, value) => {
+  console.log(key); // log the current property name, the last is "".
+  return value;     // return the unchanged property value.
+});
