@@ -23,6 +23,7 @@ function isI(w){
     }
     return true; 
 }
+
 function exist ( w, tab){  
 
   if(tab != null){ 
